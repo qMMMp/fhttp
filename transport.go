@@ -2187,6 +2187,7 @@ func (pc *persistConn) readLoop() {
 
 		resp.Body = body
 
+		/*
 		if rc.addedGzip {
 			resp.Body = DecompressBody(resp)
 			resp.Header.Del("Content-Encoding")
@@ -2194,6 +2195,7 @@ func (pc *persistConn) readLoop() {
 			resp.ContentLength = -1
 			resp.Uncompressed = true
 		}
+		*/
 
 		select {
 		case rc.ch <- responseAndError{res: resp}:
